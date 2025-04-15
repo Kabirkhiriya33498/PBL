@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Banking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Signup Page -->
+    <div id="signup-container" class="container">
+        <div class="form_area">
+            <p class="title">SIGN UP</p>
+            <form>
+                <div class="form_group">
+                    <label class="sub_title" for="signup-name">Name</label>
+                    <input placeholder="Enter your full name" id="signup-name" class="form_style" type="text">
+                </div>
+                <div class="form_group">
+                    <label class="sub_title" for="signup-username">Username</label>
+                    <input placeholder="Enter your username" id="signup-username" class="form_style" type="text">
+                </div>
+                <div class="form_group">
+                    <label class="sub_title" for="signup-password">Password</label>
+                    <input placeholder="Enter your password" id="signup-password" class="form_style" type="password">
+                </div>
+                <button type="button" class="btn" onclick="signup()">SIGN UP</button>
+                <p>Have an Account? <a class="link" href="#" onclick="showLogin()">Login Here!</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-container" class="container" style="display: none;">
+        <div class="form_area">
+            <p class="title">LOGIN</p>
+            <form>
+                <div class="form_group">
+                    <label class="sub_title" for="login-username">Username</label>
+                    <input type="text" id="login-username" class="form_style" placeholder="Enter username">
+                </div>
+                <div class="form_group">
+                    <label class="sub_title" for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form_style" placeholder="Enter password">
+                </div>
+                <button type="button" class="btn" onclick="login()">LOGIN</button>
+                <p class="signup-link">No account? <a href="#" onclick="showSignup()">Sign up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="container" style="display: none;">
+        <div class="form_area">
+            <p class="title">Welcome, <span id="user-display"></span></p>
+            <p>Balance: INR <span id="balance">0</span></p>
+
+            <div class="form_group">
+                <label class="sub_title">Enter Amount (INR )</label>
+                <input type="number" id="amount" class="form_style" placeholder="Enter Amount">
+            </div>
+            <button class="btn" onclick="deposit()">Deposit</button>
+            <button class="btn" onclick="withdraw()">Withdraw</button>
+
+            <p class="title">Transfer Funds</p>
+            <div class="form_group">
+                <label class="sub_title">Recipient</label>
+                <input type="text" id="recipient" class="form_style" placeholder="Enter Mobile or Account Number">
+            </div>
+            <div class="form_group">
+                <label class="sub_title">Amount (INR )</label>
+                <input type="number" id="send-amount" class="form_style" placeholder="Enter Amount">
+            </div>
+            <button class="btn" onclick="sendMoney()">Send Money</button>
+
+            <p class="title">Transaction History</p>
+            <ul id="transactions" class="transaction-list"></ul>
+
+            <p class="title">Additional Banking Features</p>
+            <button class="btn" onclick="viewStatement()">View Account Statement</button>
+            <button class="btn" onclick="downloadStatement()">Download Statement (PDF)</button>
+            <button class="btn" onclick="applyLoan()">Apply for Loan</button>
+            <button class="btn" onclick="manageCredit()">Manage Credit Cards</button>
+            <button class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+            <button class="btn" onclick="changePin()">Change PIN</button>
+
+            <p class="title">Profile & Settings</p>
+            <input type="file" id="profile-pic" class="form_style">
+            <button class="btn" onclick="updateProfilePic()">Upload Profile Picture</button>
+
+            <button class="btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
